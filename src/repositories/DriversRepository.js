@@ -1,13 +1,19 @@
 import db from "../db/memory.js";
 class DriversRepository {
     findAll(filters = {}) {
-        const drivers = db.drivers.filter(driver => {
-            if (filters.name && !driver.name.toLowerCase().includes(filters.name.toLowerCase())) return false;
+        const cars = db.cars.filter(car => {
+            if (filters.color && !car.color.toLowerCase().includes(filters.color.toLowerCase()))
+                return false;
+
+            if (filters.brand && !car.brand.toLowerCase().includes(filters.brand.toLowerCase()))
+                return false;
+
             return true;
         });
 
-        return drivers;
+        return cars;
     }
+
 
     findById(id) {
         const driverFound = db.drivers.find(driver => driver.id === id) || null;
