@@ -1,5 +1,4 @@
 import db from "../db/memory.js";
-
 class CarsRepository {
     findAll(filters = {}) {
         const cars = db.cars.filter(car => {
@@ -11,11 +10,16 @@ class CarsRepository {
     }
 
     findById(id) {
-        const carFound = db.cars.find(car => car.id === id) || null;
+        const carFound = db.cars.find(car => car.id == id) || null;
         return carFound;
     }
 
     create(car) {
+        const exitingCar = this.findById(car.id);
+        if (exitingCar){
+            throw "Already exists a car with this id";
+        }
+        
         db.cars.push(car);
         return car;
     }
