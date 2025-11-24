@@ -6,7 +6,7 @@ export default {
             const driver = DriversService.create(req.body);
             res.status(201).json(driver);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     list(req, res) {
@@ -14,7 +14,7 @@ export default {
             const drivers = DriversService.findAll(req.query);
             res.json(drivers);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     get(req, res) {
@@ -26,7 +26,7 @@ export default {
 
             res.json(driver);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     update(req, res) {
@@ -38,7 +38,7 @@ export default {
 
             res.json(updated);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     remove(req, res) {
@@ -50,7 +50,7 @@ export default {
 
             res.status(204).send();
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     }
 };

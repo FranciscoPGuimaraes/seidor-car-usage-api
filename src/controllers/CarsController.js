@@ -6,7 +6,7 @@ export default {
             const car = CarsService.create(req.body);
             res.status(201).json(car);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
 
     },
@@ -15,7 +15,7 @@ export default {
             const cars = CarsService.findAll(req.query);
             res.json(cars);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     get(req, res) {
@@ -27,7 +27,7 @@ export default {
 
             res.json(car);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     update(req, res) {
@@ -39,7 +39,7 @@ export default {
 
             res.json(updated);
         } catch (error) {
-            res.status(400).json({ message: error });
+            res.status(400).json({ message: error.message });
         }
     },
     remove(req, res) {
@@ -48,10 +48,10 @@ export default {
             if (!success) {
                 return res.status(404).json({ error: "Not found" });
             }
-
+    
             res.status(204).send();
-        } catch (error) {
-            res.status(400).json({ message: error });
+                } catch (error) {
+            res.status(400).json({ message: error.message });
         }
     }
 };

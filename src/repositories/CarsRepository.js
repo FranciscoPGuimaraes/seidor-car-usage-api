@@ -15,11 +15,6 @@ class CarsRepository {
     }
 
     create(car) {
-        const exitingCar = this.findById(car.id);
-        if (exitingCar){
-            throw "Already exists a car with this id";
-        }
-        
         db.cars.push(car);
         return car;
     }
