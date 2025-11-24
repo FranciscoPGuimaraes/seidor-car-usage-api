@@ -20,7 +20,7 @@ class DriversRepository {
     }
 
     update(id, data) {
-        const idx = db.drivers.findIndex(d => driver.id === id);
+        const idx = db.drivers.findIndex(driver => driver.id === id);
         if (idx === -1) return null;
         db.drivers[idx] = { ...db.drivers[idx], ...data };
 
