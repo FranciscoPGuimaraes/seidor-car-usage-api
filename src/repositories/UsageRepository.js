@@ -22,13 +22,13 @@ class UsageRepository {
     }
 
     finish(id, endDate) {
-        const usageFound = db.usages.find(usage => usage.id === id);
+        const usageFound = db.usages.find(usage => String(usage.id) === String(id));
         if (!usageFound) {
             return null;
         }
 
-        usage.endDate = endDate;
-        return usage;
+        usageFound.endDate = endDate;
+        return usageFound;
     }
 
     listAll() {
