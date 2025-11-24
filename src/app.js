@@ -11,6 +11,6 @@ app.use("/cars", carsRoutes);
 app.use("/drivers", driversRoutes);
 app.use("/usage", usageRoutes);
 
-app.get("/", (req, res) => res.send("Car Usage API"));
+app.get("/", (req, res) => res.send("Car Usage API Running"));
 
 export default app;
