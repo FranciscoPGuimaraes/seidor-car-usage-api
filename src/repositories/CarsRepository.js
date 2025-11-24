@@ -2,10 +2,15 @@ import db from "../db/memory.js";
 class CarsRepository {
     findAll(filters = {}) {
         const cars = db.cars.filter(car => {
-            if (filters.color && car.color !== filters.color) return false;
-            if (filters.brand && car.brand !== filters.brand) return false;
+            if (filters.color && !car.color.toLowerCase().includes(filters.color.toLowerCase()))
+                return false;
+
+            if (filters.brand && !car.brand.toLowerCase().includes(filters.brand.toLowerCase()))
+                return false;
+
             return true;
         });
+
         return cars;
     }
 
