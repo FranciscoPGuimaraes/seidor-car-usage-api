@@ -107,39 +107,37 @@ Server will run at:
 
 ## API Endpoints Summary
 
-### Cars
+## Cars
 
-  Method   Route       Description
-  -------- ----------- ------------------
-  POST     /cars       Create a new car
-  GET      /cars       List cars (With Query filter by name)
-  GET      /cars/:id   Get car by ID
-  PUT      /cars/:id   Update car
-  DELETE   /cars/:id   Delete car
+| Method | Route     | Description                                   |
+|--------|-----------|-----------------------------------------------|
+| POST   | /cars     | Create a new car                              |
+| GET    | /cars     | List cars (with query filter by color/brand)  |
+| GET    | /cars/:id | Get car by ID                                 |
+| PUT    | /cars/:id | Update car                                    |
+| DELETE | /cars/:id | Delete car                                    |
 
-------------------------------------------------------------------------
+---
 
-### Drivers
+## Drivers
 
-  Method   Route          Description
-  -------- -------------- ---------------
-  POST     /drivers       Create driver
-  GET      /drivers       List drivers (With Query filter by color and brand)
-  GET      /drivers/:id   Get by ID
-  PUT      /drivers/:id   Update driver
-  DELETE   /drivers/:id   Delete driver
+| Method | Route        | Description                               |
+|--------|--------------|--------------------------------------------|
+| POST   | /drivers     | Create driver                              |
+| GET    | /drivers     | List drivers (with query filter by name)   |
+| GET    | /drivers/:id | Get by ID                                  |
+| PUT    | /drivers/:id | Update driver                              |
+| DELETE | /drivers/:id | Delete driver                              |
 
-------------------------------------------------------------------------
+---
 
-### Usage
+## Usage
 
-  Method   Route    Description
-  -------- -------- ----------------
-  POST     /usage   Register usage
-  GET      /usage   List all usage
-  PATCH    /usage/:id/finish    Finish usage
-
-------------------------------------------------------------------------
+| Method | Route               | Description     |
+|--------|---------------------|-----------------|
+| POST   | /usage              | Register usage  |
+| GET    | /usage              | List all usage  |
+| PATCH  | /usage/:id/finish   | Finish usage    |
 
 ## Technologies Used
 
