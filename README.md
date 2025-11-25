@@ -74,12 +74,6 @@ All tests use **Jest** and **Supertest**.
 Run:
 
 ``` bash
-npm test
-```
-
-or (for ESM users):
-
-``` bash
 npm run test
 ```
 
@@ -118,7 +112,7 @@ Server will run at:
   Method   Route       Description
   -------- ----------- ------------------
   POST     /cars       Create a new car
-  GET      /cars       List cars
+  GET      /cars       List cars (With Query filter by name)
   GET      /cars/:id   Get car by ID
   PUT      /cars/:id   Update car
   DELETE   /cars/:id   Delete car
@@ -130,7 +124,7 @@ Server will run at:
   Method   Route          Description
   -------- -------------- ---------------
   POST     /drivers       Create driver
-  GET      /drivers       List drivers
+  GET      /drivers       List drivers (With Query filter by color and brand)
   GET      /drivers/:id   Get by ID
   PUT      /drivers/:id   Update driver
   DELETE   /drivers/:id   Delete driver
@@ -143,6 +137,7 @@ Server will run at:
   -------- -------- ----------------
   POST     /usage   Register usage
   GET      /usage   List all usage
+  PATCH    /usage/:id/finish    Finish usage
 
 ------------------------------------------------------------------------
 
